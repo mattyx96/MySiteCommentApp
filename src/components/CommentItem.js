@@ -10,25 +10,25 @@ class CommentListItem extends React.Component {
             id: props.id,
             numLikes: props.numLikes,
             comment: props.comment,
-            sender: props.sender
+            sender: props.sender,
         };
+        this.incrementLike = this.incrementLike.bind(this);
     }
 
 
+    incrementLike(){
+        let like = this.state.numLikes;
+        like++;
+        this.setState({numLikes: like});
+    }
 
     render() {
-
-        function incrementLike(){
-            let likes = this.state.likes;
-            likes++;
-            this.setState({numLikes: likes});
-        }
 
         return (
             <Card body>
                 <CardTitle>{this.state.sender}</CardTitle>
                 <CardText>{this.state.comment}</CardText>
-                <Button outline color="info" onClick={() => {incrementLike()}}>like: {this.state.numLikes}</Button>
+                <Button outline color="info" onClick={() => {this.incrementLike()}}>like: {this.state.numLikes}</Button>
             </Card>
         );
     }

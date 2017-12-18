@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Container} from 'reactstrap';
-import Item from './CommentListItem';
+import Item from './CommentItem';
 
 
 
@@ -8,7 +8,7 @@ import Item from './CommentListItem';
 class ListItems extends Component {
 
 
-    getComments(itemArray) {
+    getComments() {
 
         // var items = {
         //     id: [1, 2, 3, 4, 5, 6],
@@ -18,7 +18,7 @@ class ListItems extends Component {
         // };
 
 
-        var items = [
+        const items = [
             {id:1, sender:"io", comment:"ciao", numLikes:"11"},
             {id:2, sender:"tu", comment:"ciao1", numLikes:"22"},
             {id:3, sender:"lui", comment:"ciao2", numLikes:"33"},
@@ -43,7 +43,7 @@ class ListItems extends Component {
         //     })
         // });
 
-        return (items.map(function(object,index){
+        return (items.map(function(object){
                 return  <Item numLikes={object.numLikes} id={object.id} comment={object.comment} sender={object.sender}/>
             }));
     }
