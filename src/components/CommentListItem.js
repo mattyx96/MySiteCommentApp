@@ -1,5 +1,6 @@
 import React from 'react'
-import {ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Button} from 'reactstrap';
+import {Card, CardTitle, CardText, Button} from 'reactstrap';
+import '../assets/css/commentItem.css';
 
 class CommentListItem extends React.Component {
 
@@ -7,20 +8,28 @@ class CommentListItem extends React.Component {
         super(props);
         this.state = {
             id: props.id,
-            numLikes: props.numLikes
+            numLikes: props.numLikes,
+            comment: props.comment,
+            sender: props.sender
         };
     }
 
+
+
     render() {
 
+        function incrementLike(){
+            let likes = this.state.likes;
+            likes++;
+            this.setState({numLikes: likes});
+        }
+
         return (
-            <ListGroupItem active>
-                <ListGroupItemHeading>{this.props.sender}</ListGroupItemHeading>
-                <ListGroupItemText>
-                    {this.props.comment}
-                </ListGroupItemText>
-                <Button>{this.state.numLikes}</Button>
-            </ListGroupItem>
+            <Card body>
+                <CardTitle>{this.state.sender}</CardTitle>
+                <CardText>{this.state.comment}</CardText>
+                <Button outline color="info" onClick={() => {incrementLike()}}>like: {this.state.numLikes}</Button>
+            </Card>
         );
     }
 }

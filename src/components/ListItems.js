@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Container} from 'reactstrap';
 import Item from './CommentListItem';
 
 
@@ -7,7 +8,7 @@ import Item from './CommentListItem';
 class ListItems extends Component {
 
 
-    demonio(itemArray) {
+    getComments(itemArray) {
 
         // var items = {
         //     id: [1, 2, 3, 4, 5, 6],
@@ -51,8 +52,10 @@ class ListItems extends Component {
 
     render() {
         return (
-            <div className="App">
-                {this.demonio()}
+            <div>
+                <Container className="fluid">
+                {this.getComments()}
+                </Container>
             </div>
         );
     }

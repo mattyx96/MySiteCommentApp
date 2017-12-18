@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import "../assets/css/navbar.css";
 
@@ -33,7 +33,7 @@ class NavBar extends React.Component {
                                 <NavLink href="/components/">Components</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+                                <NavLink href="#">Github</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
