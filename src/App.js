@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import  Nav from './components/Navbar';
-import Items from './components/ListItems';
-
-
+import React, {Component} from "react";
+import Nav from "./components/Navbar";
+import Items from "./components/CommentList";
 
 
 class App extends Component {

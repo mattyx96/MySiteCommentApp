@@ -1,0 +1,41 @@
+body {
+    background-color: #34495e;
+}
+
+.card-body {
+    margin: 3rem;
+    padding-bottom: 25px;
+    background-color: #2ecc71;
+
+}
+
+#like-button {
+    z-index: 1;
+    position: absolute;
+    margin-top: -25px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    color: #95a5a6;
+    background-color: #2c3e50;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 0px;
+}
+
+.btn-secondary:focus, .btn-secondary:active, .btn-secondary:hover {
+    border: none;
+    outline: none !important;
+    box-shadow: none;
+    color: #95a5a6;
+}
+
+.navbar {
+    background-color: #2ecc71;
+    min-height: 80px;
+}
+
+.container {
+    width: 100%;
+}

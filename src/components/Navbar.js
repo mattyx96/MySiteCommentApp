@@ -1,6 +1,5 @@
-import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import "../assets/css/navbar.css";
+import React from "react";
+import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink} from "reactstrap";
 
 
 class NavBar extends React.Component {
@@ -25,7 +24,7 @@ class NavBar extends React.Component {
 
             <div>
                 <Navbar color="faded" light>
-                    <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
+                    <NavbarBrand href="/" className="mr-auto">Comments</NavbarBrand>
                     <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                     <Collapse isOpen={!this.state.collapsed} navbar>
                         <Nav navbar>
