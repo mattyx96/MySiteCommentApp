@@ -1,5 +1,6 @@
 import React from "react";
 import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink} from "reactstrap";
+import {EventEmitter} from "fbemitter";
 
 
 class NavBar extends React.Component {
@@ -9,9 +10,25 @@ class NavBar extends React.Component {
 
         this.toggleNavbar = this.toggleNavbar.bind(this);
         this.state = {
-            collapsed: true
+            collapsed: true,
+            sortby: "date"
         };
+        //this.emitter = new EventEmitter();
     }
+
+    // changeSortBy() {
+    //     if (this.state.sortby == "date") {
+    //         this.setState({
+    //             sortby: "likes"
+    //         });
+    //         //this.emitter.emit("sort-by-date");
+    //     }
+    //     else{
+    //         this.setState({
+    //             sortby: "date"
+    //         });
+    //     }
+    // }
 
     toggleNavbar() {
         this.setState({
@@ -25,7 +42,10 @@ class NavBar extends React.Component {
             <div>
                 <Navbar color="faded" light>
                     <NavbarBrand href="/" className="mr-auto">Comments</NavbarBrand>
-                    <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+                    <NavbarToggler onClick={this.toggleNavbar} className="mr-2"/>
+                    <NavItem>
+                        <NavLink href="#">sortby</NavLink>
+                    </NavItem>
                     <Collapse isOpen={!this.state.collapsed} navbar>
                         <Nav navbar>
                             <NavItem>

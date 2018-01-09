@@ -2,9 +2,12 @@
   "name": "second-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://matteoomicini.drink-web.eu/comments",
   "dependencies": {
     "antd": "^3.0.0",
+    "axios": "^0.17.1",
     "bootstrap": "^4.0.0-beta.2",
+    "fbemitter": "^2.1.1",
     "react": "^16.2.0",
     "react-burger-menu": "^2.1.11",
     "react-center": "^1.1.1",
