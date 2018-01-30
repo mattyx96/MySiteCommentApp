@@ -1,6 +1,7 @@
 import React from "react";
 import {Card, CardTitle, CardText, Button} from "reactstrap";
 import Center from "react-center";
+import axios from "axios";
 
 class CommentListItem extends React.Component {
 
@@ -18,22 +19,38 @@ class CommentListItem extends React.Component {
 
 
     like() {
+
         if (this.state.liked) {
-            let like = this.state.numLikes;
-            like--;
-            this.setState({
-                numLikes: like,
-                liked: false
-            });
-            return
+
+            axios.get(`http://matteoomicini.drink-web.eu/api/dislike/` + this.state.id)
+                .then(res => {
+                    let like = this.state.numLikes;
+                    like--;
+                    this.setState({
+                        numLikes: like,
+                        liked: false
+                    })
+                        .catch(error => {
+                            console.log(error.res)
+                        });
+                });
         }
 
-        let like = this.state.numLikes;
-        like++;
-        this.setState({
-            numLikes: like,
-            liked: true
-        });
+        if (!this.state.liked) {
+
+            axios.get(`http://matteoomicini.drink-web.eu/api/like/` + this.state.id)
+                .then(res => {
+                    let like = this.state.numLikes;
+                    like++;
+                    this.setState({
+                        numLikes: like,
+                        liked: true
+                    })
+                        .catch(error => {
+                            console.log(error.res)
+                        });
+                });
+        }
 
     }
 

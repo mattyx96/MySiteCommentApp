@@ -44,7 +44,7 @@ class NavBar extends React.Component {
                     <NavbarBrand href="/" className="mr-auto">Comments</NavbarBrand>
                     <NavbarToggler onClick={this.toggleNavbar} className="mr-2"/>
                     <NavItem>
-                        <NavLink href="#">sortby</NavLink>
+                        {/*<NavLink href="#">sortby</NavLink>*/}
                     </NavItem>
                     <Collapse isOpen={!this.state.collapsed} navbar>
                         <Nav navbar>
